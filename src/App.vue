@@ -1,8 +1,11 @@
-<script setup lang="ts">
-import HomeView from "@/views/HomeView.vue";
-</script>
 <template>
-<div id="app">
-  <HomeView/>
-</div>
+  <div id="app">
+    <router-view/>
+  </div>
 </template>
+<script lang="ts">
+  import { defineComponent } from "vue";
+  export default defineComponent({
+    name: 'App'
+  })
+</script>

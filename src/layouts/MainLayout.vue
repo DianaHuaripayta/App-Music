@@ -42,8 +42,8 @@
 
 <script lang="ts">
 import { ref } from 'vue'
-
-export default {
+import { defineComponent } from 'vue';
+export default defineComponent({
   setup () {
     const leftDrawerOpen = ref(false)
     const rightDrawerOpen = ref(false)
@@ -60,7 +60,7 @@ export default {
       }
     }
   }
-}
+});
 </script>
 <!-- </template> -->
 

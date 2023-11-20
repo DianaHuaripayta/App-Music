@@ -1,19 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue';
-import MiVista from '@/views/MiVista.vue';
-import MainViewVue from '@/views/MainView.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'MainView',
-      component: MainViewVue
+      component:() => import('../layouts/MainLayout.vue'),
+      children:[
+         {path: '', component: () => import('@/components/ButtonComponent.vue')}
+      ]
     },
     {
-      path: '/mi-vista',
-      name: 'MiVista',
-      component: MiVista
+      path: '/:catchAll(.*)*',
+      component:() => import('@/views/Error404.vue'),
     },
   ]
 })
